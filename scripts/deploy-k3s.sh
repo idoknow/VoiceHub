@@ -10,6 +10,12 @@ printf '%s' "$KUBECONFIG_DATA" > "$KUBECONFIG"
 
 [[ "$IMAGE" =~ @sha256:[a-f0-9]{64}$ ]] || { echo "镜像必须是 digest 形式" >&2; exit 1; }
 
+# 节点直连 ghcr.io 偶发 EOF，可用镜像站拉取；digest 不变
+if [[ -n "${IMAGE_PULL_HOST:-}" ]]; then
+  IMAGE="${IMAGE_PULL_HOST}/${IMAGE#*/}"
+  echo "拉取地址: $IMAGE"
+fi
+
 kubectl_retry() {
   local attempt=1 max=5 delay=2
   while true; do

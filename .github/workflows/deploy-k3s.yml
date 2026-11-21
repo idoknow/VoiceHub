@@ -85,4 +85,5 @@ jobs:
         env:
           KUBECONFIG_DATA: ${{ secrets.VOICEHUB_KUBECONFIG }}
           IMAGE: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ needs.build.outputs.digest }}
+          IMAGE_PULL_HOST: ghcr.nju.edu.cn
         run: bash scripts/deploy-k3s.sh
