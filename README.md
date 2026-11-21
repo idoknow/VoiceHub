@@ -739,6 +739,7 @@ VoiceHub/
 │       ├── db-migrate-test.yml # 空库全量数据库迁移校验
 │       ├── release.yml        # Release 发布流程
 │       ├── docker-build.yml   # Docker 镜像构建
+│       ├── deploy-k3s.yml      # 生产部署（构建镜像并发布到 k3s）
 │       ├── docker-postgres.yml # PostgreSQL Docker 镜像构建
 │       ├── nix.yml            # Nix 构建校验与 pnpmDeps 哈希同步
 │       └── nix-flake-update.yml # Nix flake inputs 月度更新
@@ -1609,6 +1610,7 @@ VoiceHub/
 │   ├── create-admin.js    # 创建管理员账户
 │   ├── db-sync.js         # 数据库同步
 │   ├── deploy.js          # 一键部署脚本
+│   ├── deploy-k3s.sh      # k3s 生产部署脚本（按 digest 更新 Deployment 并校验）
 │   ├── drizzle/           # Drizzle 迁移辅助脚本
 │   │   └── migrations/
 │   ├── netlify-build.js   # Netlify 构建脚本
