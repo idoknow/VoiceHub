@@ -1373,7 +1373,8 @@ VoiceHub/
 │   │   │   │   └── weekly-schedule.get.ts # 本周歌单（支持 format=text 纯文本）
 │   │   ├── open/           # 开放API（无需认证）
 │   │   │   ├── card-codes/          # 点歌券开放API
-│   │   │   │   └── delete.post.ts   # 删除点歌券（兼容不支持 DELETE body 的代理）
+│   │   │   │   ├── delete.post.ts   # 删除点歌券（兼容不支持 DELETE body 的代理）
+│   │   │   │   └── status.get.ts    # 按券码查询券状态（不含持有人身份）
 │   │   │   ├── card-codes.delete.ts # 删除点歌券
 │   │   │   ├── card-codes.get.ts    # 获取点歌券列表
 │   │   │   ├── card-codes.patch.ts  # 更新点歌券
