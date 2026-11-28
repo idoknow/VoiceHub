@@ -600,6 +600,20 @@ export const pages = {
         legacy: 'Legacy'
       }
     },
+    legalConsent: {
+      title: 'Login Terms',
+      desc: 'View all legal documents or withdraw your consent to the login terms.',
+      loading: 'Loading legal documents...',
+      empty: 'No legal documents available',
+      loadFailed: 'Failed to load legal documents',
+      revoke: 'Withdraw consent',
+      revokeDesc: 'Withdrawing clears your consent record and signs out all devices. You must agree to the terms again at next sign-in.',
+      revokeTitle: 'Withdraw consent to login terms',
+      revokeConfirm: 'Withdraw your consent to the login terms? This signs out all devices and requires re-agreement at next sign-in.',
+      revokeCancel: 'Cancel',
+      revokeSuccess: 'Consent withdrawn and all devices signed out',
+      revokeFailed: 'Failed to withdraw consent'
+    },
     social: {
       title: 'Social Account Binding',
       desc: 'Bind social accounts to receive real-time push notifications',
@@ -1152,7 +1166,7 @@ export const pages = {
       legalConsentBlocked: 'Please read and accept the latest terms before logging in.',
       legalConsentRelatedDocs: 'Related documents',
       legalConsentModalTitle: 'Terms update',
-      legalConsentModalDesc: 'Please read the terms below to continue.',
+      legalConsentModalDesc: 'Please read the terms below to continue.\nYou can withdraw your consent at any time in Account Management.',
       legalConsentReject: 'Reject',
       legalConsentAccept: 'Agree and continue'
     },
@@ -2843,6 +2857,7 @@ export const admin = {
       pageLabel: (page: number) => `P${page}`,
       selectedHint:
         'Platform, music ID and cover will be replaced; duration updates when available, play URL is cleared',
+      replaceTitleArtist: 'Replace title & artist',
       selectHint: 'Select a search result',
       apply: 'Apply',
       applying: 'Fetching info...',

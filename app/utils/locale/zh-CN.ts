@@ -585,6 +585,20 @@ export const pages = {
         legacy: '历史会话'
       }
     },
+    legalConsent: {
+      title: '登录条款',
+      desc: '查看所有协议文档，或撤回对登录条款的同意。',
+      loading: '正在加载条款文档...',
+      empty: '暂无可查看的条款文档',
+      loadFailed: '加载条款文档失败',
+      revoke: '撤回同意',
+      revokeDesc: '撤回后将清除你的同意记录并登出所有设备，下次登录需重新阅读并同意条款。',
+      revokeTitle: '撤回登录条款同意',
+      revokeConfirm: '确认撤回对登录条款的同意？此操作会登出所有设备，下次登录需重新同意条款。',
+      revokeCancel: '取消',
+      revokeSuccess: '已撤回同意并登出所有设备',
+      revokeFailed: '撤回同意失败'
+    },
     social: {
       title: '社交账号绑定',
       desc: '绑定您的社交账号以接收实时推送通知',
@@ -1121,7 +1135,7 @@ export const pages = {
       legalConsentBlocked: '请先阅读并同意最新条款后再登录',
       legalConsentRelatedDocs: '相关文档',
       legalConsentModalTitle: '条款更新通知',
-      legalConsentModalDesc: '请仔细阅读以下条款，同意后进入系统。',
+      legalConsentModalDesc: '请仔细阅读以下条款，同意后进入系统。\n你可以随时在账号管理中撤回同意。',
       legalConsentReject: '拒绝',
       legalConsentAccept: '同意并继续'
     },
@@ -2775,6 +2789,7 @@ export const admin = {
       selectPage: '选择分P',
       pageLabel: (page: number) => `P${page}`,
       selectedHint: '应用后将替换平台、音乐 ID 与封面，可用时更新时长，并清空播放地址',
+      replaceTitleArtist: '同时替换歌名与歌手',
       selectHint: '选择一条搜索结果',
       apply: '应用替换',
       applying: '获取信息中...',

@@ -1310,6 +1310,7 @@
     <SongSourceReplaceModal
       :show="showSourceReplaceModal"
       :song="sourceReplaceSong"
+      allow-replace-title-artist
       @close="showSourceReplaceModal = false"
       @apply="applySourceReplacement"
     />
@@ -1701,13 +1702,8 @@ const filteredSongs = computed(() => {
     )
   }
 
-  // 排序
+  // 排序：完全按所选排序方式，点歌券置顶只在排期管理的待排期列表生效
   filtered.sort((a, b) => {
-    // 使用点歌券的歌曲优先置顶，不随排序方式改变
-    const aCard = a.cardCodeId ? 1 : 0
-    const bCard = b.cardCodeId ? 1 : 0
-    if (aCard !== bCard) return bCard - aCard
-
     switch (sortOption.value) {
       case 'time-desc':
         return new Date(b.createdAt || 0) - new Date(a.createdAt || 0)
@@ -2450,6 +2446,9 @@ const applySourceReplacement = (payload) => {
   editForm.value.musicId = payload.musicId || ''
   if (payload.cover) editForm.value.cover = payload.cover
   if (payload.durationSeconds != null) editForm.value.durationSeconds = payload.durationSeconds
+  // 勾选时同步采用新音源的歌名与歌手
+  if (payload.title) editForm.value.title = payload.title
+  if (payload.artist) editForm.value.artist = payload.artist
   // 旧播放地址指向原音源，换源后必须清空避免继续使用旧链接
   editForm.value.playUrl = ''
   editSourceSelection.value = payload.selectionToken
